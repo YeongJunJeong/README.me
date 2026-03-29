@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -n \"fetch\\\\|\\\\.json\\(\\)\" /c/DevCard/src/app/page.tsx /c/DevCard/src/app/wrapped/[username]/page.tsx)",
+      "Bash(grep -A20 \"useEffect\" /c/DevCard/src/app/wrapped/[username]/page.tsx)",
+      "Bash(grep -n \"useParams\\\\|params\\\\.\" /c/DevCard/src/app/wrapped/[username]/page.tsx)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(tasklist)",
+      "Bash(wmic OS get FreePhysicalMemory,TotalVisibleMemorySize /Value)",
+      "Bash(taskkill //IM node.exe //F)"
+    ]
+  }
+}
