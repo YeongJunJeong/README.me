@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
               left: "-100px",
               width: "800px",
               height: "800px",
-              background: "rgba(57, 211, 83, 0.15)",
+              background: "rgba(31, 111, 235, 0.15)",
               filter: "blur(120px)",
               borderRadius: "50%",
             }}
@@ -93,7 +93,7 @@ export async function GET(req: NextRequest) {
                   src={avatar}
                   width={80}
                   height={80}
-                  style={{ borderRadius: "50%", border: "4px solid #39d353" }}
+                  style={{ borderRadius: "50%", border: "4px solid #58a6ff" }}
                 />
               )}
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -112,14 +112,15 @@ export async function GET(req: NextRequest) {
                 style={{
                   fontSize: "56px",
                   fontWeight: 900,
-                  background: "linear-gradient(135deg, #2ea043, #39d353)",
+                  letterSpacing: "-1px",
+                  background: "linear-gradient(135deg, #1f6feb, #79c0ff)",
                   backgroundClip: "text",
                   color: "transparent",
                 }}
               >
                 {mbti}
               </span>
-              <span style={{ fontSize: "24px", color: "#39d353", marginTop: "8px" }}>
+              <span style={{ fontSize: "24px", fontWeight: "bold", color: "#58a6ff", marginTop: "8px" }}>
                 {title}
               </span>
             </div>
@@ -137,17 +138,11 @@ export async function GET(req: NextRequest) {
               }}
             >
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <span style={{ fontSize: "32px", fontWeight: "bold", color: "#39d353" }}>{topLang}</span>
+                <span style={{ fontSize: "32px", fontWeight: "bold", color: "#58a6ff" }}>{topLang}</span>
                 <span style={{ fontSize: "14px", color: "#8b949e", marginTop: "6px" }}>Top Language</span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  {/* SVG Star replacing emoji */}
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="#e3b341">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  <span style={{ fontSize: "32px", fontWeight: "bold", color: "#e3b341" }}>{stars}</span>
-                </div>
+                <span style={{ fontSize: "32px", fontWeight: "bold", color: "#e3b341" }}>⭐ {stars}</span>
                 <span style={{ fontSize: "14px", color: "#8b949e", marginTop: "6px" }}>Stars</span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>

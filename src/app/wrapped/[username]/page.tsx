@@ -104,7 +104,7 @@ export default function WrappedPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <div className="w-16 h-16 border-4 border-accent-green/20 border-t-accent-green rounded-full animate-spin mx-auto mb-6" />
+          <div className="w-16 h-16 border-4 border-accent-blue/20 border-t-accent-blue rounded-full animate-spin mx-auto mb-6" />
           <p className="text-text-primary text-lg font-medium mb-2">
             @{username}
           </p>
@@ -135,13 +135,13 @@ export default function WrappedPage() {
                 sessionStorage.removeItem(`readmeme:${username}`);
                 window.location.reload();
               }}
-              className="px-6 py-3 rounded-lg bg-accent-green text-bg-primary font-medium text-sm hover:brightness-110 transition-all"
+              className="px-6 py-3 rounded-lg bg-accent-blue text-bg-primary font-medium text-sm hover:brightness-110 transition-all"
             >
               다시 시도
             </button>
             <a
               href="/"
-              className="px-6 py-3 rounded-lg bg-bg-card border border-border font-medium text-sm hover:border-accent-green/50 transition-all"
+              className="px-6 py-3 rounded-lg bg-bg-card border border-border font-medium text-sm hover:border-accent-blue/50 transition-all"
             >
               홈으로
             </a>

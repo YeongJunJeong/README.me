@@ -24,13 +24,13 @@ export default function Error({
         <div className="flex gap-3 justify-center">
           <button
             onClick={reset}
-            className="px-6 py-3 rounded-lg bg-accent-green text-bg-primary font-medium text-sm hover:brightness-110 transition-all"
+            className="px-6 py-3 rounded-lg bg-accent-blue text-white font-medium text-sm hover:brightness-110 transition-all"
           >
             다시 시도
           </button>
           <a
             href="/"
-            className="px-6 py-3 rounded-lg bg-bg-card border border-border font-medium text-sm hover:border-accent-green/50 transition-all"
+            className="px-6 py-3 rounded-lg bg-bg-card border border-border font-medium text-sm hover:border-accent-blue/50 transition-all"
           >
             홈으로
           </a>

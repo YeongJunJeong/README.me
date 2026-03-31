@@ -9,7 +9,7 @@
   --color-border: #30363d;
   --color-border-light: #21262d;
 
-  /* GitHub accent colors */
+  /* Accent colors — blue-first */
   --color-accent-green: #39d353;
   --color-accent-blue: #58a6ff;
   --color-accent-purple: #d2a8ff;
@@ -19,21 +19,21 @@
   --color-accent-red: #f85149;
   --color-accent-cyan: #79c0ff;
 
-  /* GitHub contribution greens */
+  /* Contribution greens */
   --color-contrib-0: #161b22;
   --color-contrib-1: #0e4429;
   --color-contrib-2: #006d32;
   --color-contrib-3: #26a641;
   --color-contrib-4: #39d353;
 
-  /* Text */
+  /* Text — 더 진하게 */
   --color-text-primary: #f0f6fc;
-  --color-text-secondary: #8b949e;
-  --color-text-muted: #484f58;
+  --color-text-secondary: #c9d1d9;
+  --color-text-muted: #8b949e;
 }
 
 :root {
-  --gradient-wrapped: linear-gradient(135deg, #2ea043, #39d353, #76e3aa);
+  --gradient-wrapped: linear-gradient(135deg, #1f6feb, #58a6ff, #79c0ff);
 }
 
 body {
@@ -54,7 +54,7 @@ body {
   border-radius: 3px;
 }
 
-/* Gradient text utility */
+/* Gradient text utility — blue */
 .gradient-text {
   background: var(--gradient-wrapped);
   -webkit-background-clip: text;
@@ -62,7 +62,7 @@ body {
   background-clip: text;
 }
 
-/* Card gradient border */
+/* Card gradient border — blue */
 .card-gradient-border {
   position: relative;
   background: var(--color-bg-card);
@@ -82,13 +82,13 @@ body {
   pointer-events: none;
 }
 
-/* Slide backgrounds — GitHub tones */
-.slide-bg-1 { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0e4429 100%); }
+/* Slide backgrounds — blue tones */
+.slide-bg-1 { background: linear-gradient(135deg, #0d1117 0%, #0c1929 100%); }
 .slide-bg-2 { background: linear-gradient(135deg, #0d1117 0%, #0c1929 100%); }
-.slide-bg-3 { background: linear-gradient(135deg, #0d1117 0%, #0e4429 100%); }
+.slide-bg-3 { background: linear-gradient(135deg, #0d1117 0%, #0c1929 100%); }
 .slide-bg-4 { background: linear-gradient(135deg, #0d1117 0%, #1c0f36 100%); }
 .slide-bg-5 { background: linear-gradient(135deg, #0d1117 0%, #2c1117 100%); }
-.slide-bg-6 { background: linear-gradient(135deg, #0d1117 0%, #0c1929 50%, #0e4429 100%); }
+.slide-bg-6 { background: linear-gradient(135deg, #0d1117 0%, #0c1929 50%, #0d1117 100%); }
 
 /* GitHub-style focus ring */
 *:focus-visible {

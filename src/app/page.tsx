@@ -54,9 +54,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
-      {/* Background effects — subtle GitHub green glow */}
+      {/* Background effects — blue glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent-green/5 rounded-full blur-[120px]" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent-blue/8 rounded-full blur-[120px]" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-blue/5 rounded-full blur-[120px]" />
       </div>
 
@@ -82,7 +82,7 @@ export default function Home() {
           <p className="text-text-secondary text-lg mb-1">
             Your GitHub Wrapped
           </p>
-          <p className="text-text-muted text-sm">
+          <p className="text-text-secondary text-sm">
             깃허브 프로필을 분석해서 나만의 개발자 카드를 만들어 보세요
           </p>
         </motion.div>
@@ -127,7 +127,7 @@ export default function Home() {
           <button
             type="submit"
             disabled={loading || !username.trim()}
-            className="w-full py-4 rounded-xl font-semibold text-lg transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-accent-green text-bg-primary hover:brightness-110 active:scale-[0.98]"
+            className="w-full py-4 rounded-xl font-semibold text-lg transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-accent-blue text-white hover:brightness-110 active:scale-[0.98]"
           >
             {loading ? (
               <span className="flex items-center justify-center gap-3">
@@ -157,7 +157,7 @@ export default function Home() {
                     setUsername(name);
                     setError("");
                   }}
-                  className="px-3 py-1.5 text-xs rounded-lg border border-border text-text-secondary hover:border-accent-green/50 hover:text-accent-green transition-all"
+                  className="px-3 py-1.5 text-xs rounded-lg border border-border text-text-secondary hover:border-accent-blue/50 hover:text-accent-blue transition-all"
                 >
                   @{name}
                 </button>

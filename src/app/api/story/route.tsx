@@ -25,9 +25,7 @@ export async function GET(req: NextRequest) {
     const stars = (searchParams.get("stars") || "0").slice(0, 10);
     const commits = (searchParams.get("commits") || "0").slice(0, 10);
     const rawAvatar = searchParams.get("avatar") || "";
-    let summary = searchParams.get("summary") || "";
-    summary = summary.length > 200 ? summary.slice(0, 200) + "..." : summary;
-
+    const summary = (searchParams.get("summary") || "").slice(0, 150);
     const avatar = isValidAvatarUrl(rawAvatar) ? rawAvatar : "";
 
     return new ImageResponse(
@@ -42,157 +40,133 @@ export async function GET(req: NextRequest) {
             justifyContent: "center",
             background: "#0d1117",
             fontFamily: "sans-serif",
+            color: "#f0f6fc",
             position: "relative",
           }}
         >
-          {/* Background Glows for Story */}
+          {/* Background glow */}
           <div
             style={{
               position: "absolute",
-              top: "0px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "1000px",
-              height: "1000px",
-              background: "rgba(57, 211, 83, 0.15)",
-              filter: "blur(200px)",
+              top: "-80px",
+              width: "400px",
+              height: "400px",
+              background: "rgba(31,111,235,0.12)",
               borderRadius: "50%",
+              filter: "blur(80px)",
             }}
           />
           <div
             style={{
               position: "absolute",
-              bottom: "0px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "1000px",
-              height: "1000px",
-              background: "rgba(88, 166, 255, 0.1)",
-              filter: "blur(200px)",
+              bottom: "-80px",
+              width: "400px",
+              height: "400px",
+              background: "rgba(88,166,255,0.08)",
               borderRadius: "50%",
+              filter: "blur(80px)",
             }}
           />
 
-          {/* The Actual Vertical Card */}
+          {/* Card */}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              justifyContent: "space-between",
-              width: "880px",
-              height: "1500px",
+              justifyContent: "center",
+              width: "460px",
               background: "#161b22",
-              borderRadius: "64px",
-              border: "3px solid #30363d",
-              padding: "80px",
-              boxShadow: "0 40px 80px rgba(0,0,0,0.8)",
+              borderRadius: "24px",
+              border: "2px solid #30363d",
+              padding: "36px 32px",
               position: "relative",
             }}
           >
-            {/* Top Section */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              {avatar && (
-                <img
-                  src={avatar}
-                  width={200}
-                  height={200}
-                  style={{ borderRadius: "50%", border: "8px solid #39d353", marginBottom: "40px" }}
-                />
-              )}
-              <span style={{ fontSize: "64px", fontWeight: "bold", color: "#f0f6fc", marginBottom: "16px" }}>
-                {username}
-              </span>
-              <span style={{ fontSize: "32px", color: "#8b949e" }}>
-                @{username}
-              </span>
-            </div>
-
-            {/* MBTI Section */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "60px 0" }}>
-              <span
+            {/* Avatar */}
+            {avatar && (
+              <img
+                src={avatar}
+                width={80}
+                height={80}
                 style={{
-                  fontSize: "100px",
-                  fontWeight: 900,
-                  background: "linear-gradient(135deg, #2ea043, #39d353)",
-                  backgroundClip: "text",
-                  color: "transparent",
-                  marginBottom: "24px",
+                  borderRadius: "50%",
+                  border: "3px solid #58a6ff",
+                  marginBottom: "16px",
                 }}
-              >
-                {mbti}
-              </span>
-              <span style={{ fontSize: "40px", color: "#39d353", fontWeight: "bold" }}>
-                {title}
-              </span>
-            </div>
+              />
+            )}
 
-            {/* Stats Row */}
+            {/* Name */}
+            <span style={{ fontSize: "26px", fontWeight: "bold", marginBottom: "2px" }}>
+              {username}
+            </span>
+            <span style={{ fontSize: "13px", color: "#8b949e", marginBottom: "24px" }}>
+              @{username}
+            </span>
+
+            {/* MBTI */}
+            <span
+              style={{
+                fontSize: "44px",
+                fontWeight: 900,
+                letterSpacing: "-1px",
+                background: "linear-gradient(135deg, #1f6feb, #79c0ff)",
+                backgroundClip: "text",
+                color: "transparent",
+                marginBottom: "6px",
+              }}
+            >
+              {mbti}
+            </span>
+            <span style={{ fontSize: "18px", color: "#58a6ff", fontWeight: "bold", marginBottom: "24px" }}>
+              {title}
+            </span>
+
+            {/* Stats */}
             <div
               style={{
                 display: "flex",
                 width: "100%",
                 justifyContent: "space-between",
-                padding: "48px",
+                padding: "16px 24px",
                 background: "#0d1117",
-                borderRadius: "32px",
-                border: "2px solid #21262d",
-                marginBottom: "60px",
+                borderRadius: "12px",
+                border: "1px solid #21262d",
+                marginBottom: "20px",
               }}
             >
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <span style={{ fontSize: "56px", fontWeight: "bold", color: "#39d353" }}>{topLang}</span>
-                <span style={{ fontSize: "28px", color: "#8b949e", marginTop: "16px" }}>Top Language</span>
+                <span style={{ fontSize: "18px", fontWeight: "bold", color: "#58a6ff" }}>{topLang}</span>
+                <span style={{ fontSize: "10px", color: "#8b949e", marginTop: "4px" }}>Top Lang</span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  {/* SVG Star replacing emoji */}
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="#e3b341">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  <span style={{ fontSize: "56px", fontWeight: "bold", color: "#e3b341" }}>{stars}</span>
-                </div>
-                <span style={{ fontSize: "28px", color: "#8b949e", marginTop: "16px" }}>Stars</span>
+                <span style={{ fontSize: "18px", fontWeight: "bold", color: "#e3b341" }}>⭐ {stars}</span>
+                <span style={{ fontSize: "10px", color: "#8b949e", marginTop: "4px" }}>Stars</span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <span style={{ fontSize: "56px", fontWeight: "bold", color: "#58a6ff" }}>{commits}</span>
-                <span style={{ fontSize: "28px", color: "#8b949e", marginTop: "16px" }}>Commits</span>
+                <span style={{ fontSize: "18px", fontWeight: "bold", color: "#58a6ff" }}>{commits}</span>
+                <span style={{ fontSize: "10px", color: "#8b949e", marginTop: "4px" }}>Commits</span>
               </div>
             </div>
 
             {/* Summary */}
             {summary && (
-              <div
-                style={{
-                  fontSize: "32px",
-                  color: "#8b949e",
-                  textAlign: "center",
-                  maxWidth: "90%",
-                  lineHeight: "1.6",
-                }}
-              >
-                "{summary}"
+              <div style={{ fontSize: "12px", color: "#8b949e", textAlign: "center", lineHeight: 1.5 }}>
+                {summary}
               </div>
             )}
-          </div>
 
-          {/* Watermark */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: "60px",
-              fontSize: "32px",
-              color: "#484f58",
-              fontWeight: "bold"
-            }}
-          >
-            README.me
+            {/* Watermark */}
+            <span style={{ marginTop: "16px", fontSize: "11px", color: "#484f58", fontWeight: "bold" }}>
+              README.me
+            </span>
           </div>
         </div>
       ),
-      { width: 1080, height: 1920 }
+      { width: 540, height: 720 }
     );
   } catch {
-    return new Response("Failed to generate story image", { status: 500 });
+    return new Response("Failed to generate image", { status: 500 });
   }
 }

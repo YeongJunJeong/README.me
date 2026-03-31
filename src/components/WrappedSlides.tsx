@@ -92,7 +92,7 @@ export function WrappedSlides({ stats, analysis }: Props) {
             aria-label={`슬라이드 ${i + 1}로 이동`}
           >
             <motion.div
-              className="h-full bg-accent-green"
+              className="h-full bg-accent-blue"
               initial={false}
               animate={{ width: i <= currentSlide ? "100%" : "0%" }}
               transition={{ duration: 0.3 }}
@@ -129,17 +129,17 @@ export function WrappedSlides({ stats, analysis }: Props) {
         <button
           onClick={() => paginate(-1)}
           disabled={currentSlide === 0}
-          className="px-4 py-2 rounded-lg bg-bg-card border border-border text-sm disabled:opacity-20 hover:border-accent-green/50 transition-all"
+          className="px-4 py-2 rounded-lg bg-bg-card border border-border text-sm disabled:opacity-20 hover:border-accent-blue/50 transition-all"
         >
           ← 이전
         </button>
-        <span className="text-text-muted text-sm tabular-nums min-w-[60px] text-center">
+        <span className="text-text-secondary text-sm tabular-nums min-w-[60px] text-center">
           {currentSlide + 1} / {totalSlides}
         </span>
         <button
           onClick={() => paginate(1)}
           disabled={currentSlide === totalSlides - 1}
-          className="px-4 py-2 rounded-lg bg-bg-card border border-border text-sm disabled:opacity-20 hover:border-accent-green/50 transition-all"
+          className="px-4 py-2 rounded-lg bg-bg-card border border-border text-sm disabled:opacity-20 hover:border-accent-blue/50 transition-all"
         >
           다음 →
         </button>
@@ -163,7 +163,7 @@ function SlideIntro({ stats }: { stats: GitHubStats }) {
         <img
           src={stats.user.avatar_url}
           alt={stats.user.login}
-          className="w-24 h-24 rounded-full mx-auto mb-4 ring-2 ring-accent-green ring-offset-2 ring-offset-bg-primary"
+          className="w-24 h-24 rounded-full mx-auto mb-4 ring-2 ring-accent-blue ring-offset-2 ring-offset-bg-primary"
         />
       </motion.div>
       <motion.h2
@@ -175,7 +175,7 @@ function SlideIntro({ stats }: { stats: GitHubStats }) {
         {stats.user.name || stats.user.login}
       </motion.h2>
       <motion.p
-        className="text-text-muted text-sm mb-1"
+        className="text-text-secondary text-sm mb-1"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.35 }}
@@ -198,12 +198,12 @@ function SlideIntro({ stats }: { stats: GitHubStats }) {
         transition={{ delay: 0.5 }}
       >
         <div className="text-center">
-          <p className="text-text-muted text-sm">GitHub에 함께한 지</p>
-          <p className="text-5xl font-black gradient-text my-1">
+          <p className="text-text-secondary text-sm">GitHub에 함께한 지</p>
+          <p className="text-4xl font-black gradient-text my-1">
             {years > 0 ? `${years}년` : `${stats.accountAgeDays}일`}
           </p>
           {years > 0 && (
-            <p className="text-text-muted text-sm">{stats.accountAgeDays.toLocaleString()}일째</p>
+            <p className="text-text-secondary text-sm">{stats.accountAgeDays.toLocaleString()}일째</p>
           )}
         </div>
 
@@ -215,7 +215,7 @@ function SlideIntro({ stats }: { stats: GitHubStats }) {
       </motion.div>
 
       <motion.p
-        className="mt-8 text-text-muted text-xs"
+        className="mt-8 text-text-secondary text-xs"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
@@ -269,13 +269,13 @@ function SlideLanguages({ stats }: { stats: GitHubStats }) {
         언어 DNA
       </motion.h2>
       <motion.p
-        className="text-text-muted text-sm text-center mb-6"
+        className="text-text-secondary text-sm text-center mb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1 }}
       >
         Top Language:{" "}
-        <span className="text-accent-green font-semibold">{stats.topLanguage}</span>
+        <span className="text-accent-blue font-semibold">{stats.topLanguage}</span>
       </motion.p>
 
       {sorted.length > 0 ? (
@@ -320,11 +320,11 @@ function SlideLanguages({ stats }: { stats: GitHubStats }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <p className="text-text-muted text-4xl mb-2">🤷</p>
+          <p className="text-text-secondary text-4xl mb-2">🤷</p>
           <p className="text-text-secondary text-sm">
             public 레포에서 언어 데이터를 찾지 못했어요
           </p>
-          <p className="text-text-muted text-xs mt-1">
+          <p className="text-text-secondary text-xs mt-1">
             private 레포가 많은 분이신가 봐요!
           </p>
         </motion.div>
@@ -360,8 +360,8 @@ function SlideActivity({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <p className="text-3xl font-bold text-accent-green">{stats.commitCount}</p>
-            <p className="text-text-muted text-xs mt-1">Recent Commits</p>
+            <p className="text-3xl font-bold text-accent-blue">{stats.commitCount}</p>
+            <p className="text-text-secondary text-xs mt-1">Recent Commits</p>
           </motion.div>
           <motion.div
             className="bg-bg-card rounded-xl p-4 text-center border border-border"
@@ -370,7 +370,7 @@ function SlideActivity({
             transition={{ delay: 0.3 }}
           >
             <p className="text-3xl font-bold text-accent-blue">{stats.activeDays}</p>
-            <p className="text-text-muted text-xs mt-1">Active Days</p>
+            <p className="text-text-secondary text-xs mt-1">Active Days</p>
           </motion.div>
           <motion.div
             className="bg-bg-card rounded-xl p-4 text-center border border-border"
@@ -379,7 +379,7 @@ function SlideActivity({
             transition={{ delay: 0.4 }}
           >
             <p className="text-3xl font-bold text-accent-purple">{stats.prCount}</p>
-            <p className="text-text-muted text-xs mt-1">Pull Requests</p>
+            <p className="text-text-secondary text-xs mt-1">Pull Requests</p>
           </motion.div>
           <motion.div
             className="bg-bg-card rounded-xl p-4 text-center border border-border"
@@ -388,7 +388,7 @@ function SlideActivity({
             transition={{ delay: 0.5 }}
           >
             <p className="text-3xl font-bold text-accent-orange">{stats.totalForks}</p>
-            <p className="text-text-muted text-xs mt-1">Total Forks</p>
+            <p className="text-text-secondary text-xs mt-1">Total Forks</p>
           </motion.div>
         </div>
       ) : (
@@ -401,7 +401,7 @@ function SlideActivity({
           <p className="text-text-secondary text-sm">
             최근 public 활동 기록이 없어요
           </p>
-          <p className="text-text-muted text-xs mt-1">
+          <p className="text-text-secondary text-xs mt-1">
             (GitHub Events API는 최근 90일 public 활동만 반영합니다)
           </p>
         </motion.div>
@@ -413,7 +413,7 @@ function SlideActivity({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        <p className="text-xs text-text-muted uppercase tracking-wider mb-2">커밋 스타일</p>
+        <p className="text-xs text-text-secondary uppercase tracking-wider mb-2">커밋 스타일</p>
         <p className="text-sm font-medium">{analysis.commitStyle}</p>
       </motion.div>
 
@@ -423,7 +423,7 @@ function SlideActivity({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
       >
-        <p className="text-xs text-text-muted uppercase tracking-wider mb-2">스피릿 애니멀</p>
+        <p className="text-xs text-text-secondary uppercase tracking-wider mb-2">스피릿 애니멀</p>
         <p className="text-base font-medium">{analysis.spirit_animal}</p>
       </motion.div>
     </div>
@@ -434,7 +434,7 @@ function SlideMBTI({ analysis }: { analysis: WrappedAnalysis }) {
   return (
     <div className="slide-bg-4 w-full max-w-md mx-auto p-8 rounded-2xl border border-border text-center">
       <motion.p
-        className="text-text-muted text-sm mb-4"
+        className="text-text-secondary text-sm mb-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -451,7 +451,7 @@ function SlideMBTI({ analysis }: { analysis: WrappedAnalysis }) {
       </motion.h2>
 
       <motion.p
-        className="text-xl font-semibold text-accent-green mb-4"
+        className="text-xl font-semibold text-accent-blue mb-4"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
@@ -474,7 +474,7 @@ function SlideMBTI({ analysis }: { analysis: WrappedAnalysis }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        <p className="text-text-muted text-xs uppercase tracking-wider">성격 한 줄 요약</p>
+        <p className="text-text-secondary text-xs uppercase tracking-wider">성격 한 줄 요약</p>
         <p className="text-sm font-medium bg-bg-card rounded-lg p-3 border border-border">
           {analysis.personality}
         </p>
@@ -486,13 +486,13 @@ function SlideMBTI({ analysis }: { analysis: WrappedAnalysis }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
       >
-        <p className="text-text-muted text-xs uppercase tracking-wider">강점</p>
+        <p className="text-text-secondary text-xs uppercase tracking-wider">강점</p>
         {analysis.strengths.map((s, i) => (
           <div
             key={i}
             className="flex items-center gap-2 bg-bg-card rounded-lg px-3 py-2 text-sm border border-border"
           >
-            <span className="text-accent-green text-xs">●</span>
+            <span className="text-accent-blue text-xs">●</span>
             {s}
           </div>
         ))}
@@ -532,7 +532,7 @@ function SlideRoast({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
       >
-        <p className="text-text-muted text-xs uppercase tracking-wider mb-3">재미있는 사실들</p>
+        <p className="text-text-secondary text-xs uppercase tracking-wider mb-3">재미있는 사실들</p>
         <div className="space-y-2">
           {analysis.funFacts.map((fact, i) => (
             <motion.div
@@ -557,7 +557,7 @@ function SlideRoast({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <p className="text-text-muted text-xs uppercase tracking-wider mb-3">베스트 레포</p>
+          <p className="text-text-secondary text-xs uppercase tracking-wider mb-3">베스트 레포</p>
           <div className="space-y-2">
             {stats.topRepos.slice(0, 3).map((repo) => (
               <div
@@ -566,7 +566,7 @@ function SlideRoast({
               >
                 <div className="min-w-0">
                   <p className="text-sm font-medium truncate">{repo.name}</p>
-                  <p className="text-xs text-text-muted">{repo.language || "—"}</p>
+                  <p className="text-xs text-text-secondary">{repo.language || "—"}</p>
                 </div>
                 <span className="text-accent-yellow text-sm ml-3 shrink-0">
                   ★ {repo.stargazers_count}
@@ -591,8 +591,8 @@ function StatBox({
 }) {
   return (
     <div className="bg-bg-card rounded-lg p-3 text-center border border-border">
-      <p className={`text-xl font-bold ${color}`}>{value.toLocaleString()}</p>
-      <p className="text-text-muted text-xs">{label}</p>
+      <p className={`text-2xl font-bold ${color}`}>{value.toLocaleString()}</p>
+      <p className="text-text-secondary text-xs">{label}</p>
     </div>
   );
 }
