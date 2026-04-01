@@ -3,21 +3,14 @@
 <br />
 
 # README.me
+**English** | [한국어](README.md)
 
 **Spotify Wrapped, but for your GitHub.**
 
 Just enter a GitHub username.<br />
 AI analyzes your coding personality and generates a shareable developer card.
 
-**English** | [한국어](README.md)
-
 <br />
-
-<a href="https://readme-me-github.vercel.app/">
-  <img src="https://img.shields.io/badge/Live Demo-README.me-58a6ff?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
-</a>
-
-<br /><br />
 
 <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js" alt="Next.js" />
 <img src="https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -29,7 +22,14 @@ AI analyzes your coding personality and generates a shareable developer card.
 
 <img src="main.png" alt="README.me preview" width="640" />
 
+<br />
+
 </div>
+
+## 🌐 Live Demo
+
+Turn your GitHub profile into a shareable developer card.<br />
+<a href="https://readme-me-github.vercel.app/"><b>Live Demo — README.me</b></a>
 
 <br />
 
