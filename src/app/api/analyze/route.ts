@@ -16,9 +16,18 @@ const DEFAULT_ANALYSIS: WrappedAnalysis = {
   summary: "조용하지만 꾸준한 개발자. 앞으로의 성장이 기대됩니다!",
 };
 
+// Strip any Korean characters from codingMBTI — must be English only
+function sanitizeMBTI(value: string): string {
+  // Remove Korean (Hangul) characters
+  const stripped = value.replace(/[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/g, "").trim();
+  // Must match pattern like XXXX-word (letters + hyphen + letters)
+  const valid = /^[A-Z]{2,6}-[a-zA-Z]+$/.test(stripped);
+  return valid ? stripped : DEFAULT_ANALYSIS.codingMBTI;
+}
+
 function validateAnalysis(raw: Record<string, unknown>): WrappedAnalysis {
   return {
-    codingMBTI: typeof raw.codingMBTI === "string" ? raw.codingMBTI : DEFAULT_ANALYSIS.codingMBTI,
+    codingMBTI: typeof raw.codingMBTI === "string" ? sanitizeMBTI(raw.codingMBTI) : DEFAULT_ANALYSIS.codingMBTI,
     mbtiTitle: typeof raw.mbtiTitle === "string" ? raw.mbtiTitle : DEFAULT_ANALYSIS.mbtiTitle,
     mbtiDescription: typeof raw.mbtiDescription === "string" ? raw.mbtiDescription : DEFAULT_ANALYSIS.mbtiDescription,
     personality: typeof raw.personality === "string" ? raw.personality : DEFAULT_ANALYSIS.personality,

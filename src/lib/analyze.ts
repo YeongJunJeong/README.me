@@ -61,7 +61,7 @@ ${stats.recentActivity.join("\n")}
 
 Respond ONLY with valid JSON (no markdown, no code fences):
 {
-  "codingMBTI": "4-letter code like ENFP-debug or INTJ-deploy (make it coding-themed and funny)",
+  "codingMBTI": "MUST be English only. Format: 4 uppercase letters + hyphen + English word. Examples: ENFP-debug, INTJ-deploy, ISTP-refactor, ENTP-hacker, INFJ-architect. NO Korean characters allowed in this field.",
   "mbtiTitle": "Korean title for this MBTI type, max 15 chars (e.g., '새벽형 디버거', '풀스택 몽상가')",
   "mbtiDescription": "2-sentence Korean description of this coding personality type. Be funny and relatable.",
   "personality": "One-line developer personality summary in Korean (witty, meme-worthy)",
