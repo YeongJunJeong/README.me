@@ -5,8 +5,6 @@
 # README.me
 [English](README_EN.md) | **한국어**
 
-**Spotify Wrapped, 하지만 GitHub 버전.**
-
 GitHub 유저네임 하나면 충분합니다.<br />
 AI가 당신의 코딩 성격을 분석하고, 공유할 수 있는 카드를 만들어 드립니다.
 

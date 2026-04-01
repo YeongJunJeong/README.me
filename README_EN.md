@@ -5,8 +5,6 @@
 # README.me
 **English** | [한국어](README.md)
 
-**Spotify Wrapped, but for your GitHub.**
-
 Just enter a GitHub username.<br />
 AI analyzes your coding personality and generates a shareable developer card.
 
