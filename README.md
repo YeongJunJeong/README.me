@@ -12,6 +12,10 @@
 <img src="https://img.shields.io/badge/OpenAI-gpt--4o--mini-412991?logo=openai" alt="OpenAI" />
 <img src="https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel" alt="Vercel" />
 
+<br /><br />
+
+<img src="main.png" alt="README.me 미리보기" width="600" />
+
 </div>
 
 ---

@@ -13,7 +13,8 @@
       "Bash(taskkill //IM node.exe //F)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/api/story?username=test&mbti=INTJ&title=test&lang=JS&stars=1&commits=0&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F1%3Fv%3D4&summary=test\")",
       "Bash(curl -v \"http://localhost:3000/api/story?username=test&mbti=INTJ&title=test&lang=JS&stars=1&commits=0&summary=test\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/api/story?username=test&mbti=INTJ&title=test&lang=JS&stars=1&commits=0&summary=hello\")"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/api/story?username=test&mbti=INTJ&title=test&lang=JS&stars=1&commits=0&summary=hello\")",
+      "Bash(ls /c/DevCard/*.png /c/DevCard/public/*.png)"
     ]
   }
 }
